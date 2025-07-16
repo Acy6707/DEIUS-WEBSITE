@@ -19,7 +19,8 @@
 
     .container {
       text-align: center;
-      max-width: 600px;
+      max-width: 700px;
+      padding: 20px;
     }
 
     .hidden {
@@ -49,7 +50,16 @@
       background-color: #111;
       border: 1px solid #333;
       padding: 15px;
-      margin: 10px 0;
+      margin: 15px 0;
+      border-radius: 8px;
+    }
+
+    .data-block img {
+      width: 100%;
+      max-width: 300px;
+      border-radius: 6px;
+      display: block;
+      margin-bottom: 10px;
     }
 
     h1 {
@@ -80,7 +90,9 @@
   </div>
 
   <script>
-    const CORRECT_PASSWORD = "deius2025"; // 你可以修改這裡
+    const CORRECT_PASSWORD = "deius2025"; // 修改這裡可改密碼
+
+    // 實驗者資料（含頭像）
     const subjects = [
       {
         id: "A-001",
@@ -88,6 +100,7 @@
         status: "穩定",
         ability: "精神連結",
         note: "實驗中表現出異常低溫的情緒反應。",
+        avatar: "https://i.imgur.com/9Yg2N0b.png"
       },
       {
         id: "A-002",
@@ -95,6 +108,7 @@
         status: "失控後回收",
         ability: "幻象構造",
         note: "疑似擁有記憶操控能力。",
+        avatar: "https://i.imgur.com/vkQ3h2v.png"
       },
       {
         id: "A-003",
@@ -102,6 +116,7 @@
         status: "未知",
         ability: "獸化抑制",
         note: "自10年前失蹤後，再無記錄。",
+        avatar: "https://i.imgur.com/MoeCSZk.png"
       }
     ];
 
@@ -124,6 +139,7 @@
         const block = document.createElement("div");
         block.className = "data-block";
         block.innerHTML = `
+          <img src="${subj.avatar}" alt="${subj.name} 頭像">
           <strong>ID:</strong> ${subj.id}<br>
           <strong>姓名:</strong> ${subj.name}<br>
           <strong>狀態:</strong> ${subj.status}<br>
@@ -137,3 +153,4 @@
 
 </body>
 </html>
+
